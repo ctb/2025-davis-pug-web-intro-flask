@@ -50,7 +50,6 @@ links to try:
     See: <a href='https://commons.wikimedia.org/wiki/File:33344-Mei%C3%9Fen-2008-Mei%C3%9Fner_Bleikristall_(Vase_und_Burg)-Br%C3%BCck_%26_Sohn_Kunstverlag.jpg'>source for vase image</a>
 """    
 
-## CTB add: example route with variables
 @app.route('/user/<username>')
 def user_fn(username):
     # here you would do some kind of validation for logins, etc.
