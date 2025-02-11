@@ -31,3 +31,22 @@ python main.py
 ```
 will run the Web app locally, at
 [http://localhost:5001/](http://localhost:5001/).
+
+(You'll need to run it on your local laptop for this to connect.)
+
+## A guided tour
+
+See
+["Server side Web programming"](https://hackmd.io/kLOnYY8vRtiSptcUU2zonQ?view).
+
+## References and packages used
+
+The underlying Python framework used here is
+[Flask](https://flask.palletsprojects.com/en/stable/).
+
+Flask uses [jinja2](https://jinja.palletsprojects.com/en/stable/) for
+templating.
+
+We use [the pico CSS framework](https://picocss.com/docs) for the CSS.
+
+Tests are done using [pytest](https://docs.pytest.org/en/stable/index.html) and [the requests library](https://docs.python-requests.org/en/latest/api/).
