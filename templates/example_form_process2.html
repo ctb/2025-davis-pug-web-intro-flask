@@ -1,0 +1,9 @@
+Multiplying every number between 0 and {{ upper_limit }} by {{ multiply_by }}.
+
+<p>
+
+<table border=1>
+{% for i in range(0, upper_limit) %}
+<tr><td>{{ i }}</td><td>{{ multiply_by * upper_limit }}</td>
+{% endfor %}
+</table>
