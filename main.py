@@ -2,27 +2,9 @@
 from flask import Flask, render_template, redirect, url_for
 from flask import app, request  # these are frequently used objects.
 
-import markdown
-
-def percentify(num):
-    return f"{num * 100:.1f}%"
-
-def markdownify(md):
-    return markdown.markdown(md)
-
-
 # run this function once, to create the Flask applicaton.
 def create_app():
     app = Flask(__name__)
-
-    with app.app_context():
-        # do any configuration stuff here, including adding jinja2 filters.
-
-        # add percentify filter
-        app.jinja_env.filters['percentify'] = percentify
-        
-        # add markdownify filter to jinja2
-        app.jinja_env.filters['markdownify'] = markdownify
 
     return app
 
@@ -41,8 +23,6 @@ links to try:
     <li> <a href='/user/user1'>User 1 link</a>
     <li> <a href='/example_form'>An example form (GET)</a>
     <li> <a href='/example_form2'>Another example form (POST)</a>
-    <li> <a href='/example_filter'>Example of 'percentify' filter</a>
-    <li> <a href='/example_md'>Example of markdown</a>
     </ul>
     <p>
     <img src='/static/vase.jpg'/>
@@ -94,14 +74,6 @@ def example_form_process2():
         return render_template('example_form_process2.html',
                                **values)
 
-@app.route('/example_filter')
-def example_filter():
-    return render_template('example_filter.html', val=0.87)
-    
-@app.route('/example_md')
-def example_md():
-    return render_template('example.md')
-    
 ###
 ### run as app - 'python main.py'. Can also do 'flask --app main.py run'.
 ###
